@@ -9,8 +9,8 @@ export default function Home() {
     <div>
       <h1>Home</h1>
       <Button>Click Me</Button>
-      <Button onClick={() => setTheme('dark')}>Dark</Button>
-      <Button onClick={() => setTheme('light')}>Light</Button>
+      <Button onClick={() => setTheme('dark')}>Dark Model</Button>
+      <Button onClick={() => setTheme('light')}>Light Model</Button>
     </div>
   );
 }
