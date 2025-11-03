@@ -31,7 +31,7 @@ export function AppSidebar() {
               <h2 className="font-bold text-xl">Nexulon AI</h2>
             </div>
             <div>
-              {theme == "light" ? (
+              {theme === "light" ? (
                 <Button variant={"ghost"} onClick={() => setTheme("dark")}>
                   <Sun />
                 </Button>
@@ -53,7 +53,7 @@ export function AppSidebar() {
           <div className={"p-3"}>
             <h2 className="font-bold text-lg">Chat</h2>
             <p className="text-sm text-gray-400">
-              Sign in to start chatting with multiple AI model
+              Sign in to start chatting with multiple AI models
             </p>
           </div>
         </SidebarGroup>
