@@ -1,8 +1,8 @@
+"use client";
 import { Button } from "@/components/ui/button";
 import { Mic, Paperclip, Send } from "lucide-react";
 import React from "react";
 import AiMultiModel from "./AiMultiModel";
-
 
 function ChatInputBox() {
   return (
