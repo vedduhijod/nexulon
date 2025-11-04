@@ -1,3 +1,4 @@
+"use client";
 import AIModelList from "@/shared/AIModelList";
 import React from "react";
 import Image from "next/image";
@@ -23,6 +24,7 @@ function AiMultiModel() {
     <div className="flex flex-1 h-[75vh] border-b">
       {aiModelList.map((model, index) => (
         <div
+          key={model.model}
           className={`flex flex-col border-r overflow-auto
         ${model.enable ? "flex-1 min-w-[400px]" : "w-[100px] flex-none"}`}
         >
@@ -68,7 +70,10 @@ function AiMultiModel() {
           </div>
           {model.premium && model.enable && (
             <div className="flex items-center justify-center h-full">
-              <Button> <Lock /> Upgrade to unlock</Button>
+              <Button>
+                {" "}
+                <Lock /> Upgrade to unlock
+              </Button>
             </div>
           )}
         </div>
