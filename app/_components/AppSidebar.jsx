@@ -11,9 +11,16 @@ import {
 import { Button } from "@/components/ui/button";
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
+import React from "react";
 
 export function AppSidebar() {
   const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = React.useState(false);
+
+
+  React.useEffect(() => {
+    setMounted(true);
+  }, []);
 
   return (
     <Sidebar>
@@ -30,18 +37,22 @@ export function AppSidebar() {
               />
               <h2 className="font-bold text-xl">Nexulon AI</h2>
             </div>
+
+
             <div>
-              {theme === "light" ? (
-                <Button variant={"ghost"} onClick={() => setTheme("dark")}>
-                  <Sun />
-                </Button>
-              ) : (
-                <Button variant={"ghost"} onClick={() => setTheme("light")}>
-                  <Moon />
-                </Button>
-              )}
+              {mounted &&
+                (theme === "light" ? (
+                  <Button variant="ghost" onClick={() => setTheme("dark")}>
+                    <Sun />
+                  </Button>
+                ) : (
+                  <Button variant="ghost" onClick={() => setTheme("light")}>
+                    <Moon />
+                  </Button>
+                ))}
             </div>
           </div>
+
           <Button className="mt-7 w-full" size="lg">
             + New Chat
           </Button>
@@ -50,7 +61,7 @@ export function AppSidebar() {
 
       <SidebarContent>
         <SidebarGroup>
-          <div className={"p-3"}>
+          <div className="p-3">
             <h2 className="font-bold text-lg">Chat</h2>
             <p className="text-sm text-gray-400">
               Sign in to start chatting with multiple AI models
@@ -61,7 +72,7 @@ export function AppSidebar() {
 
       <SidebarFooter>
         <div className="p-3 mb-10">
-          <Button className={"w-full"} size={"lg"}>
+          <Button className="w-full" size="lg">
             Sign in/Sign up
           </Button>
         </div>
