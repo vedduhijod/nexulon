@@ -9,7 +9,7 @@ import { doc, getDoc, setDoc } from "firebase/firestore";
 import { db } from "@/config/FirebaseConfig";
 import { AiSelectedModelContext } from "@/context/AiSelectedModelContext";
 import { DefaultModel } from "@/shared/AiModelsShared";
-import { UserDetailInfo, UserDetailInfoContext } from "@/context/UserDetailInfo";
+import { UserDetailInfo } from "@/context/UserDetailInfo";
 
 function Provider({ children, ...props }) {
   const { user } = useUser();
