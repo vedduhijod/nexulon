@@ -30,7 +30,7 @@ function Provider({ children, ...props }) {
         name: user?.fullName,
         email: user?.primaryEmailAddress?.emailAddress,
         createdAt: new Date(),
-        reamainingMsg: 5,  
+        remainingMsg: 5,  
         plan:"Free",
         credits: 1000
       }
