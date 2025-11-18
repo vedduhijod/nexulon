@@ -16,7 +16,8 @@ import { Lock, LockIcon, MessageSquare } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { AiSelectedModelContext } from "@/context/AiSelectedModelContext";
 import { useUser } from "@clerk/nextjs";
-import { updateDoc } from "firebase/firestore";
+import { doc, updateDoc } from "firebase/firestore";
+import { db } from "@/config/FirebaseConfig";
 
 function AiMultiModel() {
   const { user } = useUser();
